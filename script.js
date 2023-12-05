@@ -24,7 +24,12 @@ const canvas = document.getElementById('animationCanvas');
 
     
       for (let i = 0; i < numBoxes; i++) {
-        ctx.fillStyle = 'yellowgreen'; 
+        
+        if (i % 2 === 0) {
+          ctx.fillStyle = 'rgba(154, 205, 50, 0.7)'; // First color
+        } else {
+          ctx.fillStyle = 'rgba(255, 165, 0, 0.5)'; // Second color
+        }
         ctx.fillRect(boxes[i].x, boxes[i].y, boxWidth, boxHeight);
 
        
