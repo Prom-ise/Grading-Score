@@ -49,7 +49,7 @@ const canvas = document.getElementById('animationCanvas');
 var currentlyPlayingSong = null;
 
 function checkScore() {
-    if (num. value != "") {
+    if (num.value != "") {
 
         if (currentlyPlayingSong !== null) {
             currentlyPlayingSong.pause();
