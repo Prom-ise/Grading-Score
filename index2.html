@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        overflow: hidden;
+    }
+    canvas{
+        display: block;
+    }
+    #animationCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.button{
+    padding: 12px, 12px;
+    border-radius: 6px;
+    border-top: 1.5px solid var(--stroke-light-100, rgba(141, 246, 139, 0.2));
+    border-right: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2)) ;
+    border-left: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.20)) ;
+    color: #f6f3f6;
+    cursor: pointer;
+    background: #019a3c;
+    box-shadow: 0px  0px 0px 1.5px #333, 0px 1px 0px 1.5px #333, 0px 2px 0px 0px #000;
+    width: 100px;
+    height: 36.5px;
+    margin-top: 1px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.videoContainer{
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    border: 3px double red;
+    width: 500px;
+    height: 230px;
+    margin-top: 30vh;
+    padding-top: 25px;
+    box-shadow: 0px 0px 2.0px 1.5px #000;
+    z-index: 1;
+}
+#backgroundVideo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.content{
+    position: relative;
+    z-index: 1;
+}
+main{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+body{
+    background-image: repeating-radial-gradient(
+        orange 60%,
+        yellow
+    );
+}
+#displayResults{
+    width: 180px;
+    height: 30px;
+    padding: 5px 10px 2px 10px;
+    font-family: cursive;
+}
+</style>
+<body>
+    <main>
+        <canvas id="animationCanvas"></canvas>
+    <div class="videoContainer">
+        <video autoplay muted loop id="backgroundVideo">
+            <source src="Video/[AnimeRG] Naruto Shippuden - 197 [720p] [x265] [pseudo].mkv">
+        </video>
+        <div class="content">
+            <marquee behavior="changing" direction="left" style="margin-bottom: 10px;color: #019a3c; font-family: fantasy;">Welcome to the official Grading page!</marquee>
+            <h2 style="text-align: center; padding-bottom: 20px; color: yellow; text-decoration: underline; text-decoration-color: #019a3c;">GRADING SCORE</h2>
+        <div style="display: flex; justify-content: center; gap: 4px;">
+        <!-- <label for="num">Enter your score:</label> -->
+        <input type="number" class="form-control" id="num" placeholder="Enter your score:" style="height: 39px; width: 250px; padding-left: 10px; border-radius: 6px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        <button class="button" onclick="checkScore()">Check</button>
+        </div>
+
+        <div style="display: flex; justify-content: center; margin-top: 10px;">
+        <button style=" border-radius: 15px;"><p id="displayResults"></p></button>
+        </div>
+        </div>
+        </div>
+        <audio id="SongA" src="Audio/SongA.mp3"></audio>
+        <audio id="SongB" src="Audio/SongB.mp3"></audio>
+        <audio id="SongC" src="Audio/SongC.mp3"></audio>
+        <audio id="SongD" src="Audio/SongD.mp3"></audio>
+        <audio id="SongE" src="Audio/SongE.mp3"></audio>
+        <audio id="SongF" src="Audio/SongF.mp3"></audio>
+        <audio id="SongX" src="Audio/SongX.mp3"></audio>
+
+</main>
+    <script src="script.js"></script>
+</body>
+</html>
